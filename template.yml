@@ -6,9 +6,9 @@ Resources:
       Role: !GetAtt GlueServiceRole.Arn
       Command:
         Name: glueetl
-        ScriptLocation: s3://mycodepipelinebucket13/script/glue_script.py
+        ScriptLocation: s3://codepiplinebuket/script/glue_script.py
       DefaultArguments:
-        "--TempDir": "s3://mycodepipelinebucket13/temp/"
+        "--TempDir": "s3://codepiplinebuket/temp/"
       GlueVersion: "2.0"
       WorkerType: G.1X
       NumberOfWorkers: 3
@@ -17,7 +17,7 @@ Resources:
   GlueServiceRole:
     Type: AWS::IAM::Role
     Properties:
-      RoleName: !Sub "${AWS::StackName}-MyRoleForGlue1"
+      RoleName: arn:aws:iam::562763636274:role/GlueETLRole
       AssumeRolePolicyDocument:
         Version: "2012-10-17"
         Statement:
